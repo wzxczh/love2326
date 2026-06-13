@@ -1,0 +1,137 @@
+/* ==================== 全局变量与基础样式 ==================== */
+:root {
+    --sunset-400: #d9a890;
+    --sunset-500: #c7856e;
+    --ink: #3a3430;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d9d0c9; border-radius: 10px; }
+
+/* ==================== Hero 晚霞背景 ==================== */
+.hero-sky {
+    background:
+        radial-gradient(ellipse 80% 60% at 50% 30%, rgba(235,200,175,0.55) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 25% 55%, rgba(220,180,160,0.35) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 45% at 75% 50%, rgba(210,175,155,0.3) 0%, transparent 55%),
+        linear-gradient(180deg, #f7f3ef 0%, #f2e8df 15%, #efe3d8 30%, #f0e4da 50%, #f5ede6 70%, #faf7f4 100%);
+    position: relative;
+    overflow: hidden;
+}
+.hero-sky::before {
+    content: ''; position: absolute; top: -15%; left: 10%; width: 280px; height: 280px;
+    background: radial-gradient(circle, rgba(220,180,155,0.25) 0%, transparent 70%);
+    border-radius: 50%; animation: float 8s ease-in-out infinite; pointer-events: none;
+}
+.hero-sky::after {
+    content: ''; position: absolute; bottom: -10%; right: 8%; width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(210,170,145,0.2) 0%, transparent 70%);
+    border-radius: 50%; animation: float 9s ease-in-out 2s infinite; pointer-events: none;
+}
+
+/* ==================== 时间轴 ==================== */
+.timeline-line {
+    position: absolute; left: 50%; top: 0; bottom: 0; width: 2px;
+    background: linear-gradient(180deg, transparent 0%, #d9d0c9 8%, #d9d0c9 92%, transparent 100%);
+    transform: translateX(-50%);
+}
+.timeline-dot {
+    position: relative; z-index: 2; width: 16px; height: 16px; border-radius: 50%;
+    background: #fff; border: 2.5px solid #c7856e;
+    box-shadow: 0 0 0 6px rgba(199,133,110,0.1); transition: all 0.4s cubic-bezier(0.22,0.61,0.36,1);
+}
+.timeline-dot.active {
+    background: #c7856e; box-shadow: 0 0 0 12px rgba(199,133,110,0.18); transform: scale(1.3);
+}
+
+/* ==================== 相册轮播 ==================== */
+.gallery-track {
+    display: flex; gap: 1rem; transition: transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94); will-change: transform;
+}
+.gallery-card {
+    flex: 0 0 auto; width: 280px; height: 200px; border-radius: 1rem; overflow: hidden; cursor: pointer;
+    transition: all 0.35s ease; position: relative; background: linear-gradient(135deg, #f0e8e0 0%, #e8dbd0 100%);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+.gallery-card:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
+.gallery-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.gallery-card:hover img { transform: scale(1.04); }
+@media (max-width: 640px) { .gallery-card { width: 240px; height: 170px; } }
+
+/* ==================== Lightbox ==================== */
+.lightbox-overlay {
+    position: fixed; inset: 0; background: rgba(30,25,22,0.88); z-index: 999;
+    display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none;
+    transition: opacity 0.35s ease; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+}
+.lightbox-overlay.open { opacity: 1; pointer-events: auto; }
+.lightbox-overlay img {
+    max-width: 90vw; max-height: 85vh; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    transform: scale(0.92); transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+}
+.lightbox-overlay.open img { transform: scale(1); }
+
+/* ==================== 胶囊状态 ==================== */
+.capsule-sealed { border: 2px dashed #d9c8b8; background: linear-gradient(135deg, #fdfaf7 0%, #f8f1ea 100%); }
+.capsule-unlocked { border: 2px solid #c9b99a; background: linear-gradient(135deg, #fdfcf9 0%, #f7f2e8 100%); animation: unlockGlow 2s ease-in-out infinite; }
+
+/* ==================== 滚动渐入 ==================== */
+.reveal-on-scroll {
+    opacity: 0; transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.22,0.61,0.36,1), transform 0.7s cubic-bezier(0.22,0.61,0.36,1);
+}
+.reveal-on-scroll.visible { opacity: 1; transform: translateY(0); }
+
+/* ==================== Waline 容器 ==================== */
+.giscus-wrapper { border-radius: 1rem; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.04); background: #fff; }
+
+/* ==================== 高级导航栏 ==================== */
+.nav-glass {
+    background: rgba(250,247,244,0.75); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(180,160,145,0.15);
+    transition: background 0.4s cubic-bezier(0.22,0.61,0.36,1), box-shadow 0.4s cubic-bezier(0.22,0.61,0.36,1), padding 0.4s cubic-bezier(0.22,0.61,0.36,1);
+}
+.nav-scrolled {
+    background: rgba(250,247,244,0.92); box-shadow: 0 2px 24px rgba(0,0,0,0.06);
+    padding-top: 0.25rem !important; padding-bottom: 0.25rem !important;
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+}
+#navLogo { transform: scale(1); transition: transform 0.4s cubic-bezier(0.22,0.61,0.36,1); }
+.nav-scrolled #navLogo { transform: scale(0.9); }
+#navLinksContainer { -webkit-overflow-scrolling: touch; scroll-behavior: smooth; scrollbar-width: none; }
+#navLinksContainer::-webkit-scrollbar { display: none; }
+.nav-link.active { color: #c7856e !important; }
+.nav-link.active .nav-indicator { width: 60% !important; }
+.nav-indicator {
+    height: 2px; border-radius: 999px; background-color: #c7856e; width: 0;
+    transition: width 0.35s cubic-bezier(0.34,1.56,0.64,1);
+}
+.nav-link:hover .nav-indicator { width: 60%; }
+section[id] { scroll-margin-top: 5rem; }
+@media (max-width: 640px) { .nav-link { padding-left: 0.5rem; padding-right: 0.5rem; font-size: 0.8rem; } }
+
+/* ==================== 祝福卡片 ==================== */
+.blessing-card {
+    background: white; border-radius: 1rem; padding: 1.25rem; box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    border: 1px solid #f3ede8; transition: all 0.3s ease; animation: fadeInUp 0.4s ease forwards;
+}
+.blessing-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
+.blessing-card .author { color: #c7856e; font-weight: 600; font-size: 0.9rem; }
+.blessing-card .message { color: #3a3430; line-height: 1.6; margin-top: 0.5rem; font-size: 0.95rem; }
+
+/* 本地留言板卡片样式 */
+#messageList > div {
+    background: white; border-radius: 1rem; padding: 1.25rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04); border: 1px solid #f3ede8;
+    transition: all 0.2s ease;
+}
+#messageList > div:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    transform: translateY(-2px);
+}

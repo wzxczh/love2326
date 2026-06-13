@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中雅培粹中学2326班 · 毕业纪念站</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sunset: {
+                            50: '#fdf8f5', 100: '#faf0ea', 200: '#f3dfd3', 300: '#e8c7b5',
+                            400: '#d9a890', 500: '#c7856e', 600: '#b06a52', 700: '#8f5240',
+                            800: '#734336', 900: '#5a3830'
+                        },
+                        warm: {
+                            50: '#fafaf9', 100: '#f5f2f0', 200: '#ebe5e0', 300: '#d9d0c9',
+                            400: '#b8a99e', 500: '#9c8b7f', 600: '#7d6e64', 700: '#645850',
+                            800: '#534943', 900: '#443c37'
+                        },
+                        dusk: '#e8ddd6',
+                        ink: '#3a3430'
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'PingFang SC',
+                            'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', 'sans-serif'
+                        ]
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) forwards',
+                        'fade-in': 'fadeIn 0.6s ease forwards',
+                        'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'capsule-seal': 'capsuleSeal 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
+                        'unlock-glow': 'unlockGlow 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+                        pulseSoft: { '0%,100%': { opacity: '0.6' }, '50%': { opacity: '1' } },
+                        float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-12px)' } },
+                        capsuleSeal: {
+                            '0%': { transform: 'scale(0.9)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' }
+                        },
+                        unlockGlow: {
+                            '0%,100%': { boxShadow: '0 0 20px rgba(180,160,140,0.3)' },
+                            '50%': { boxShadow: '0 0 40px rgba(180,160,140,0.55)' }
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="font-sans text-ink bg-[#faf8f6] antialiased selection:bg-sunset-200 selection:text-ink">
+
+    <!-- ==================== 高级导航栏 ==================== -->
+    <nav class="nav-glass sticky top-0 z-50 transition-all duration-500 ease-out" id="topNav">
+        <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3 sm:py-4">
+            <a href="#hero" class="text-xl font-bold tracking-tight text-sunset-600 hover:text-sunset-500 transition-colors duration-300 select-none" id="navLogo">2326</a>
+            <div class="flex items-center gap-1 overflow-x-auto no-scrollbar" id="navLinksContainer">
+                <a href="#hero" class="nav-link group relative px-3 py-2 text-sm sm:text-base font-medium text-warm-600 hover:text-sunset-500 transition-colors duration-300 whitespace-nowrap" data-section="hero">首页<span class="nav-indicator absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-sunset-500 rounded-full transition-all duration-300 group-hover:w-full"></span></a>
+                <a href="#timeline" class="nav-link group relative px-3 py-2 text-sm sm:text-base font-medium text-warm-600 hover:text-sunset-500 transition-colors duration-300 whitespace-nowrap" data-section="timeline">时光轴<span class="nav-indicator absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-sunset-500 rounded-full transition-all duration-300 group-hover:w-full"></span></a>
+                <a href="#gallery" class="nav-link group relative px-3 py-2 text-sm sm:text-base font-medium text-warm-600 hover:text-sunset-500 transition-colors duration-300 whitespace-nowrap" data-section="gallery">相册<span class="nav-indicator absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-sunset-500 rounded-full transition-all duration-300 group-hover:w-full"></span></a>
+                <a href="#messages" class="nav-link group relative px-3 py-2 text-sm sm:text-base font-medium text-warm-600 hover:text-sunset-500 transition-colors duration-300 whitespace-nowrap" data-section="messages">留言墙<span class="nav-indicator absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-sunset-500 rounded-full transition-all duration-300 group-hover:w-full"></span></a>
+                <a href="#blessings" class="nav-link group relative px-3 py-2 text-sm sm:text-base font-medium text-warm-600 hover:text-sunset-500 transition-colors duration-300 whitespace-nowrap" data-section="blessings">祝福墙<span class="nav-indicator absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-sunset-500 rounded-full transition-all duration-300 group-hover:w-full"></span></a>
+                <a href="#capsule" class="nav-link group relative px-3 py-2 text-sm sm:text-base font-medium text-warm-600 hover:text-sunset-500 transition-colors duration-300 whitespace-nowrap" data-section="capsule">时光胶囊<span class="nav-indicator absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-sunset-500 rounded-full transition-all duration-300 group-hover:w-full"></span></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Hero 首页头部 -->
+    <section id="hero" class="hero-sky min-h-[92vh] flex items-center justify-center px-5 py-20 relative">
+        <div class="text-center max-w-2xl mx-auto relative z-10">
+            <p class="text-sm sm:text-base tracking-widest text-sunset-500/70 mb-4 font-medium animate-fade-in" style="letter-spacing: 0.25em;">少年不惧岁月长 · 彼方尚有荣光在</p>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-ink mb-5 leading-tight animate-fade-in-up" style="animation-delay: 0.15s;">三年落幕<span class="text-sunset-500">，</span><br class="sm:hidden">我们各赴山海</h1>
+            <p class="text-lg sm:text-xl text-warm-500 mb-3 animate-fade-in-up" style="animation-delay: 0.3s;">中雅培粹中学 <span class="font-semibold text-sunset-600">2326班</span> 毕业永久纪念站</p>
+            <p class="text-sm sm:text-base text-warm-400 max-w-lg mx-auto leading-relaxed animate-fade-in-up" style="animation-delay: 0.45s;">始于初秋，终于盛夏。三年不长，刚好够装下一整个青春。<br>此站为证，我们曾并肩走过最滚烫的时光。</p>
+            <div class="mt-10 animate-fade-in" style="animation-delay: 0.7s;">
+                <a href="#timeline" class="inline-flex flex-col items-center text-warm-400 hover:text-sunset-500 transition-colors duration-300 group">
+                    <span class="text-xs tracking-widest mb-2 group-hover:translate-y-1 transition-transform">探索回忆</span>
+                    <svg class="w-5 h-5 animate-pulse-soft" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 9l-7 7-7-7"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. 三年时光轴 -->
+    <section id="timeline" class="py-20 px-5 sm:px-8 bg-[#fdfcfb]">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-14 reveal-on-scroll">
+                <p class="text-xs tracking-widest text-sunset-500/70 mb-2 uppercase">Timeline</p>
+                <h2 class="text-3xl sm:text-4xl font-bold text-ink">三年时光轴</h2>
+                <p class="text-warm-400 mt-2 text-sm">每一帧，都是回不去的昨天</p>
+            </div>
+            <div class="relative">
+                <div class="timeline-line hidden sm:block"></div>
+                <div class="flex flex-col gap-10 sm:gap-16">
+                    <div class="reveal-on-scroll flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-0">
+                        <div class="sm:w-1/2 sm:pr-10 sm:text-right order-2 sm:order-1"><span class="text-xs text-sunset-500 font-semibold tracking-wider">2023 · 秋</span><h3 class="text-xl font-bold text-ink mt-1">初一初识</h3><p class="text-warm-500 text-sm mt-1 leading-relaxed">踏入中雅校门，青涩面孔，陌生又新鲜。第一次点名、第一次同桌、第一次在走廊里奔跑。</p></div>
+                        <div class="flex items-center justify-center sm:w-auto order-1 sm:order-2 sm:mx-auto relative z-10"><div class="timeline-dot" data-timeline="0"></div></div>
+                        <div class="sm:w-1/2 sm:pl-10 order-3 hidden sm:block"></div>
+                    </div>
+                    <div class="reveal-on-scroll flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-0">
+                        <div class="sm:w-1/2 sm:pr-10 sm:text-right order-2 sm:order-1 hidden sm:block"></div>
+                        <div class="flex items-center justify-center sm:w-auto order-1 sm:order-2 sm:mx-auto relative z-10"><div class="timeline-dot" data-timeline="1"></div></div>
+                        <div class="sm:w-1/2 sm:pl-10 order-3"><span class="text-xs text-sunset-500 font-semibold tracking-wider">2024 · 四季</span><h3 class="text-xl font-bold text-ink mt-1">初二嬉闹</h3><p class="text-warm-500 text-sm mt-1 leading-relaxed">熟稔相伴，课间嬉笑打闹成了日常。一起赶作业、一起吐槽食堂、一起在操场看落日。</p></div>
+                    </div>
+                    <div class="reveal-on-scroll flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-0">
+                        <div class="sm:w-1/2 sm:pr-10 sm:text-right order-2 sm:order-1"><span class="text-xs text-sunset-500 font-semibold tracking-wider">2025–2026 · 冲刺</span><h3 class="text-xl font-bold text-ink mt-1">初三拼搏</h3><p class="text-warm-500 text-sm mt-1 leading-relaxed">试卷堆叠成山，笔芯换了一根又一根。深夜灯下的坚持，只为六月考场上的不留遗憾。</p></div>
+                        <div class="flex items-center justify-center sm:w-auto order-1 sm:order-2 sm:mx-auto relative z-10"><div class="timeline-dot" data-timeline="2"></div></div>
+                        <div class="sm:w-1/2 sm:pl-10 order-3 hidden sm:block"></div>
+                    </div>
+                    <div class="reveal-on-scroll flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-0">
+                        <div class="sm:w-1/2 sm:pr-10 sm:text-right order-2 sm:order-1 hidden sm:block"></div>
+                        <div class="flex items-center justify-center sm:w-auto order-1 sm:order-2 sm:mx-auto relative z-10"><div class="timeline-dot" data-timeline="3"></div></div>
+                        <div class="sm:w-1/2 sm:pl-10 order-3"><span class="text-xs text-sunset-500 font-semibold tracking-wider">2026 · 夏</span><h3 class="text-xl font-bold text-ink mt-1">此去山海</h3><p class="text-warm-500 text-sm mt-1 leading-relaxed">毕业照快门按下的一瞬，三年画上句号。各赴前程，但这里永远是我们的原点。后会有期。</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. 班级相册区 -->
+    <section id="gallery" class="py-20 px-5 sm:px-8 bg-[#faf8f5]">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12 reveal-on-scroll"><p class="text-xs tracking-widest text-sunset-500/70 mb-2 uppercase">Gallery</p><h2 class="text-3xl sm:text-4xl font-bold text-ink">班级相册</h2><p class="text-warm-400 mt-2 text-sm">点击图片放大查看 · 左右滑动浏览</p></div>
+            <div class="relative reveal-on-scroll" id="galleryContainer">
+                <button id="galleryPrev" class="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/80 backdrop-blur shadow-md flex items-center justify-center text-warm-600 hover:text-sunset-500 hover:bg-white transition-all duration-300 -ml-3 sm:-ml-5 focus:outline-none focus:ring-2 focus:ring-sunset-300"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg></button>
+                <div class="overflow-hidden rounded-2xl" id="galleryViewport"><div class="gallery-track" id="galleryTrack"></div></div>
+                <button id="galleryNext" class="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/80 backdrop-blur shadow-md flex items-center justify-center text-warm-600 hover:text-sunset-500 hover:bg-white transition-all duration-300 -mr-3 sm:-mr-5 focus:outline-none focus:ring-2 focus:ring-sunset-300"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></button>
+                <div class="flex justify-center gap-2 mt-6" id="galleryDots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <button class="absolute top-5 right-5 z-10 w-10 h-10 rounded-full bg-white/20 backdrop-blur flex items-center justify-center text-white hover:bg-white/35 transition-all duration-300" id="lightboxClose"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
+        <img src="" alt="照片预览" id="lightboxImg">
+    </div>
+
+    <!-- 4. 同学留言墙（Waline 官方模块方式 + 本地备用） -->
+    <section id="messages" class="py-20 px-5 sm:px-8 bg-[#fdfcfb]">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12 reveal-on-scroll">
+                <p class="text-xs tracking-widest text-sunset-500/70 mb-2 uppercase">Messages</p>
+                <h2 class="text-3xl sm:text-4xl font-bold text-ink">同学留言墙</h2>
+                <p class="text-warm-400 mt-2 text-sm">留下你想说的话，支持匿名或实名留言</p>
+                <p class="text-warm-300 text-xs mt-1">由 Waline 驱动 · 永久保存</p>
+            </div>
+            <!-- Waline 官方容器 -->
+            <div class="giscus-wrapper p-4 sm:p-6 reveal-on-scroll" id="waline" style="display: none;">
+                <div class="text-center py-8 text-warm-400 text-sm" id="walineFallback">💬 留言墙加载中...</div>
+            </div>
+            <!-- 本地留言板容器（备用） -->
+            <div id="localMessageContainer" style="display: none;">
+                <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-warm-200/60 reveal-on-scroll">
+                    <h3 class="text-lg font-bold text-ink mb-4">💬 说点什么吧</h3>
+                    <form id="messageForm" class="space-y-4">
+                        <div><label for="messageAuthor" class="block text-sm text-warm-500 mb-1">昵称（可留空）</label><input type="text" id="messageAuthor" placeholder="你的名字..." maxlength="20" class="w-full px-4 py-2.5 rounded-xl border border-warm-200 bg-warm-50/50 text-ink placeholder-warm-350 focus:outline-none focus:ring-2 focus:ring-sunset-300 focus:border-transparent transition-all duration-300 text-sm"></div>
+                        <div><label for="messageContent" class="block text-sm text-warm-500 mb-1">留言内容</label><textarea id="messageContent" rows="3" placeholder="写下你的毕业感言..." maxlength="500" class="w-full px-4 py-3 rounded-xl border border-warm-200 bg-warm-50/50 text-ink placeholder-warm-350 focus:outline-none focus:ring-2 focus:ring-sunset-300 focus:border-transparent transition-all duration-300 text-sm resize-none"></textarea><p class="text-xs text-warm-400 text-right"><span id="messageCharCount">0</span>/500</p></div>
+                        <button type="submit" class="w-full py-3 rounded-xl bg-sunset-500 text-white font-semibold tracking-wide hover:bg-sunset-600 active:scale-[0.97] transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-sunset-400 focus:ring-offset-2 text-sm">✍️ 发布留言</button>
+                    </form>
+                </div>
+                <div class="mt-10 space-y-4" id="messageList"></div>
+                <div class="text-center py-8 text-warm-400 text-sm hidden" id="messageEmpty"><p>💭 还没有留言，快来写下第一条吧</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 同窗祝福墙 -->
+    <section id="blessings" class="py-20 px-5 sm:px-8 bg-[#faf8f5]">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12 reveal-on-scroll">
+                <p class="text-xs tracking-widest text-sunset-500/70 mb-2 uppercase">Blessings</p>
+                <h2 class="text-3xl sm:text-4xl font-bold text-ink">同窗祝福</h2>
+                <p class="text-warm-400 mt-2 text-sm">每一句祝福，都是最真诚的青春注脚</p>
+            </div>
+            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-warm-200/60 reveal-on-scroll" id="blessingFormCard">
+                <h3 class="text-lg font-bold text-ink mb-4">✨ 送出你的祝福</h3>
+                <form id="blessingForm" class="space-y-4">
+                    <div><label for="blessingAuthor" class="block text-sm text-warm-500 mb-1">你的名字（可匿名）</label><input type="text" id="blessingAuthor" placeholder="大家的老同学..." maxlength="30" class="w-full px-4 py-2.5 rounded-xl border border-warm-200 bg-warm-50/50 text-ink placeholder-warm-350 focus:outline-none focus:ring-2 focus:ring-sunset-300 focus:border-transparent transition-all duration-300 text-sm"></div>
+                    <div><label for="blessingMessage" class="block text-sm text-warm-500 mb-1">祝福语</label><textarea id="blessingMessage" rows="3" placeholder="愿你前程似锦，归来仍是少年..." maxlength="200" class="w-full px-4 py-3 rounded-xl border border-warm-200 bg-warm-50/50 text-ink placeholder-warm-350 focus:outline-none focus:ring-2 focus:ring-sunset-300 focus:border-transparent transition-all duration-300 text-sm resize-none"></textarea><p class="text-xs text-warm-400 text-right"><span id="blessingCharCount">0</span>/200</p></div>
+                    <button type="submit" class="w-full py-3 rounded-xl bg-sunset-500 text-white font-semibold tracking-wide hover:bg-sunset-600 active:scale-[0.97] transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-sunset-400 focus:ring-offset-2 text-sm">🌟 送出祝福</button>
+                </form>
+            </div>
+            <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4" id="blessingGrid"></div>
+            <div class="text-center py-8 text-warm-400 text-sm hidden" id="blessingEmpty"><p>💫 还没有人送出祝福，成为第一个吧</p></div>
+        </div>
+    </section>
+
+    <!-- 6. 未来时光胶囊 -->
+    <section id="capsule" class="py-20 px-5 sm:px-8 bg-[#fdfcfb]">
+        <div class="max-w-2xl mx-auto">
+            <div class="text-center mb-12 reveal-on-scroll">
+                <p class="text-xs tracking-widest text-sunset-500/70 mb-2 uppercase">Time Capsule</p>
+                <h2 class="text-3xl sm:text-4xl font-bold text-ink">未来时光胶囊</h2>
+                <p class="text-warm-400 mt-2 text-sm">写一段话给三年后的自己</p>
+                <p class="text-warm-300 text-xs mt-1">胶囊将于 <span class="font-semibold text-sunset-500" id="capsuleUnlockDateDisplay">2029年6月13日</span> 自动解锁</p>
+            </div>
+            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-warm-200/60 reveal-on-scroll" id="capsuleFormCard">
+                <h3 class="text-lg font-bold text-ink mb-4">✉️ 封存你的寄语</h3>
+                <form id="capsuleForm" class="space-y-4">
+                    <div><label for="capsuleAuthor" class="block text-sm text-warm-500 mb-1">署名（可匿名）</label><input type="text" id="capsuleAuthor" placeholder="你的名字或昵称..." maxlength="30" class="w-full px-4 py-2.5 rounded-xl border border-warm-200 bg-warm-50/50 text-ink placeholder-warm-350 focus:outline-none focus:ring-2 focus:ring-sunset-300 focus:border-transparent transition-all duration-300 text-sm"></div>
+                    <div><label for="capsuleMessage" class="block text-sm text-warm-500 mb-1">寄语内容</label><textarea id="capsuleMessage" rows="4" placeholder="写给2029年的自己..." maxlength="500" class="w-full px-4 py-3 rounded-xl border border-warm-200 bg-warm-50/50 text-ink placeholder-warm-350 focus:outline-none focus:ring-2 focus:ring-sunset-300 focus:border-transparent transition-all duration-300 text-sm resize-none"></textarea><p class="text-xs text-warm-400 text-right"><span id="capsuleCharCount">0</span>/500</p></div>
+                    <button type="submit" class="w-full py-3 rounded-xl bg-sunset-500 text-white font-semibold tracking-wide hover:bg-sunset-600 active:scale-[0.97] transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-sunset-400 focus:ring-offset-2 text-sm">🔒 封存胶囊</button>
+                </form>
+            </div>
+            <div class="mt-10 space-y-4" id="capsuleList"></div>
+            <div class="text-center py-8 text-warm-400 text-sm hidden" id="capsuleEmpty"><p>📮 还没有人留下时光胶囊</p><p class="text-xs mt-1">成为第一个封存寄语的人吧</p></div>
+        </div>
+    </section>
+
+    <!-- 7. 页脚 -->
+    <footer class="py-12 px-5 text-center bg-[#f5f1ed] border-t border-warm-200/50">
+        <p class="text-xl sm:text-2xl font-bold text-ink mb-2">致我们滚烫的三年青春</p>
+        <p class="text-sm text-warm-400 mb-1">中雅培粹中学 · 2326班 · 2023–2026</p>
+        <p class="text-xs text-warm-350">少年不惧岁月长，彼方尚有荣光在</p>
+        <p class="text-xs text-warm-300 mt-4">© 2026 2326班毕业纪念站 · 纯静态站点 · 由 GitHub Pages 驱动</p>
+    </footer>
+
+    <!-- 自定义 JS -->
+    <script src="script.js"></script>
+
+    <!-- ==================== Waline 官方模块加载（unpkg） ==================== -->
+    <link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css" />
+    <script type="module">
+        // 动态导入，加载失败自动切换本地留言板
+        async function loadWaline() {
+            const walineEl = document.getElementById('waline');
+            const localEl = document.getElementById('localMessageContainer');
+            const fallback = document.getElementById('walineFallback');
+            try {
+                const { init } = await import('https://unpkg.com/@waline/client@v3/dist/waline.js');
+                init({
+                    el: '#waline',
+                    serverURL: 'https://wzxatv.de5.net',  // 你的服务地址
+                    lang: 'zh-CN',
+                    pageSize: 10,
+                    dark: false,
+                    requiredMeta: ['nick', 'mail'],
+                    placeholder: '写下你想对同窗说的话...'
+                });
+                walineEl.style.display = 'block';
+                if (fallback) fallback.style.display = 'none';
+                if (localEl) localEl.style.display = 'none';
+                console.log('✅ Waline 留言墙已启动');
+            } catch (err) {
+                console.error('Waline 加载失败，启用本地留言板', err);
+                if (walineEl) walineEl.style.display = 'none';
+                if (localEl) localEl.style.display = 'block';
+            }
+        }
+        loadWaline();
+    </script>
+</body>
+</html>
