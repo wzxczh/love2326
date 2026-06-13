@@ -10,9 +10,9 @@
         { src: './images/03-classroom.jpg', title: '课堂瞬间', desc: '粉笔灰飞扬的日常' },
         { src: './images/04-performance.jpg', title: '文艺汇演', desc: '舞台上的闪耀时刻' },
         { src: './images/05-outing.jpg', title: '春游记忆', desc: '一起走过的风景' },
-        { src: './images/06-graduation.jpg', title: '毕业照', desc: '快门按下的永恒' },
+        { src: './images/06-graduation.jpg', title: '元旦晚会', desc: '快门按下的永恒' },
         { src: './images/07-daily.jpg', title: '日常掠影', desc: '那些不经意的美好' },
-        { src: './images/08-teachers.jpg', title: '老师寄语', desc: '三尺讲台的守望' }
+        { src: './images/08-teachers.jpg', title: '男神', desc: '教室内的欢乐' }
     ];
 
     function escapeHtml(str) { const div = document.createElement('div'); div.textContent = str; return div.innerHTML; }
